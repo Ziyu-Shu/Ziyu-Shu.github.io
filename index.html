@@ -16,11 +16,6 @@
         .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1); }
         .portfolio-card { transition: all 0.3s ease; }
-        .portfolio-card .expand-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-        .portfolio-card.expanded .expand-content { max-height: 1200px; }
-        .portfolio-card.expanded .read-more-btn { display: none; }
-        .portfolio-card .read-less-btn { display: none; }
-        .portfolio-card.expanded .read-less-btn { display: inline-block; }
     </style>
 </head>
 <body class="gradient-bg">
@@ -73,9 +68,12 @@
                     <span class="text-xs text-amber-400/90 font-medium">Network Analysis</span>
                 </div>
                 <div class="h-[1px] w-12 bg-gray-600"></div>
+                <div class="mt-5 rounded-xl overflow-hidden border border-white/10 bg-white/5">
+                    <img src="conflict_vis.png" alt="Conflict visualization" class="w-full h-auto object-contain">
+                </div>
             </div>
             <div class="glass p-8 rounded-3xl hover-lift">
-                <span class="text-purple-400 text-xs font-semibold uppercase tracking-widest">Working Paper</span>
+                <span class="text-purple-400 text-xs font-semibold uppercase tracking-widest">APSA & PIPC 2026 Presentation</span>
                 <h3 class="text-xl font-semibold mt-4 mb-3 text-white">When Honey Tastes Bitter: When China's Development Projects Overseas Backfire on Its Political Influence</h3>
                 <div class="flex flex-wrap gap-2 mb-3">
                     <span class="text-xs text-blue-400 font-medium">R</span>
@@ -90,59 +88,49 @@
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <h2 class="serif text-4xl text-white">Data Portfolio</h2>
         </div>
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="flex flex-col gap-10">
             <!-- Project Card 1 -->
-            <div class="portfolio-card glass rounded-3xl overflow-hidden hover-lift" data-card>
-                <!-- Image container with fixed aspect ratio -->
-                <div class="aspect-video bg-white/5 overflow-hidden">
-                    <img src="ds1.png" alt="U.S.-China Political Incident Forecasting Through U.S. Official Statement Analysis" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
+            <div class="portfolio-card glass rounded-3xl overflow-hidden hover-lift">
+                <div class="p-6 pb-4">
                     <div class="flex flex-wrap gap-2 mb-3">
                         <span class="text-xs text-blue-400 font-medium">Python</span>
                         <span class="text-xs text-purple-400 font-medium">NLP</span>
                         <span class="text-xs text-amber-400/90 font-medium">Time Series Analysis</span>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-2">From Words to Actions: U.S.-China Political Incident Forecasting Through U.S. Official Statement Analysis</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-2">Using bilateral events data from GDELT and official White House statements from 2009 to 2025, we applied lexicon-based sentiment analysis to statements and examined their relationship with U.S–China events using time-series methods.</p>
                     <a href="https://github.com/Ziyu-Shu/Data_Science_1_Final_Project" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-purple-300 hover:text-white transition">View on GitHub →</a>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-4">Using bilateral events data from GDELT and official White House statements from 2009 to 2025, we applied lexicon-based sentiment analysis to statements and examined their relationship with U.S–China events using time-series methods.</p>
-                    <button type="button" class="read-more-btn text-sm text-purple-300 hover:text-white transition uppercase tracking-widest" aria-expanded="false" data-toggle>Read more</button>
-                    <button type="button" class="read-less-btn text-sm text-purple-300 hover:text-white transition uppercase tracking-widest" data-toggle>Read less</button>
                 </div>
-                <div class="expand-content">
-                    <div class="px-6 pb-6 space-y-6">
-                        <div class="aspect-video bg-white/5 rounded-xl flex items-center justify-center border border-white/10">
-                            <img src="ds1_2.png" alt="U.S.-China Political Incident Forecasting Through U.S. Official Statement Analysis" class="max-w-full h-auto rounded-2xl shadow-lg">
-                        </div>
+                <div class="grid md:grid-cols-2 gap-4 px-6 pb-6">
+                    <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                        <img src="ds1.png" alt="U.S.-China Political Incident Forecasting figure 1" class="w-full h-auto object-contain">
+                    </div>
+                    <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                        <img src="ds1_2.png" alt="U.S.-China Political Incident Forecasting figure 2" class="w-full h-auto object-contain">
                     </div>
                 </div>
             </div>
 
             <!-- Project Card 2 -->
-            <div class="portfolio-card glass rounded-3xl overflow-hidden hover-lift" data-card>
-                <!-- Image container with fixed aspect ratio - same as Card 1 -->
-                <div class="aspect-video bg-white/5 overflow-hidden">
-                    <img src="dmv_1.png" alt="Research Assistant Work: Department of Motor Vehicles in New Jersey" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
+            <div class="portfolio-card glass rounded-3xl overflow-hidden hover-lift">
+                <div class="p-6 pb-4">
                     <div class="flex flex-wrap gap-2 mb-3">
                         <span class="text-xs text-blue-400 font-medium">Python</span>
                         <span class="text-xs text-blue-400 font-medium">R</span>
-                        <span class="text-xs text-purple-400 font-medium">Web Sracping</span>
+                        <span class="text-xs text-purple-400 font-medium">Web Scraping</span>
                         <span class="text-xs text-amber-400/90 font-medium">Geospatial Analysis</span>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-2">Research Assistant Work: Department of Motor Vehicles in New Jersey</h3>
-                    <a href="https://ziyu-shu.github.io/New_Jersey_DMV_map_filtered.html" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-purple-300 hover:text-white transition">More interactive dashboard →</a>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-4">Geocoding spatial data visualization of defining DMV catchment areas at the census tract level.</p>
-                    <button type="button" class="read-more-btn text-sm text-purple-300 hover:text-white transition uppercase tracking-widest" aria-expanded="false" data-toggle>Read more</button>
-                    <button type="button" class="read-less-btn text-sm text-purple-300 hover:text-white transition uppercase tracking-widest" data-toggle>Read less</button>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-2">Geocoding spatial data visualization of defining DMV catchment areas at the census tract level. Data visualization in raincloud and lollipop plot to show distribution of Google ratings of DMV driving license service sites in New Jersey.</p>
+                    <a href="https://ziyu-shu.github.io/index.html" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-purple-300 hover:text-white transition">More interactive dashboard →</a>
                 </div>
-                <div class="expand-content">
-                    <div class="px-6 pb-6 space-y-6">
-                        <div class="aspect-video bg-white/5 rounded-xl flex items-center justify-center border border-white/10">
-                            <img src="dmv_2.png" alt="Research Assistant Work: Department of Motor Vehicles in New Jersey" class="w-full h-full object-cover">
-                        </div>
-                        <p class="text-gray-300 leading-relaxed text-sm">Data visualization in raincloud and lollipop plot to show distribution of google ratings of DMV driving license service sites in New Jersey.</p>
+                <div class="grid md:grid-cols-2 gap-4 px-6 pb-6">
+                    <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                        <img src="dmv_1.png" alt="DMV New Jersey figure 1" class="w-full h-auto object-contain">
+                    </div>
+                    <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                        <img src="dmv_2.png" alt="DMV New Jersey figure 2" class="w-full h-auto object-contain">
+                    </div>
                 </div>
             </div>
         </div>
@@ -195,13 +183,5 @@
         <p class="mt-12 text-[10px] text-gray-600 uppercase tracking-[0.2em]">© 2026 Ziyu Shu. Built with intention.</p>
     </footer>
 
-    <script>
-        document.querySelectorAll('[data-toggle]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const card = btn.closest('[data-card]');
-                if (card) card.classList.toggle('expanded');
-            });
-        });
-    </script>
 </body>
 </html>
