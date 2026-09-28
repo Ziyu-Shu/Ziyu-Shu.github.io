@@ -89,6 +89,28 @@
             <h2 class="serif text-4xl text-white">Data Portfolio</h2>
         </div>
         <div class="flex flex-col gap-10">
+            <!-- Project Card: NBA shot model -->
+            <div class="portfolio-card glass rounded-3xl overflow-hidden hover-lift">
+                <div class="p-6 pb-4">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="text-xs text-blue-400 font-medium">R</span>
+                        <span class="text-xs text-purple-400 font-medium">Machine Learning</span>
+                        <span class="text-xs text-amber-400/90 font-medium">Sports Analytics</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">NBA Shot Make Probability Model from Player-Tracking Data</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-2">Built a calibrated make-probability model in R on 425K NBA shots, using LightGBM with tracking-derived defender-approach and contest features plus shooter and defender profiles. It reaches 0.622 log-loss on a fully held-out season (vs. 0.690 baseline), with SHAP-based explanations and a shooter ranking by FG% over expected.</p>
+                    <a href="https://github.com/Ziyu-Shu/nba-shot-make-model" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-purple-300 hover:text-white transition">View on GitHub →</a>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4 px-6 pb-6">
+                    <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                        <img src="nba_shap.png" alt="SHAP dependence plots for shot distance, contester distance, shot clock and shooter speed" class="w-full h-auto object-contain">
+                    </div>
+                    <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                        <img src="nba_calibration.png" alt="Calibration of held-out season predictions" class="w-full h-auto object-contain">
+                    </div>
+                </div>
+            </div>
+
             <!-- Project Card 1 -->
             <div class="portfolio-card glass rounded-3xl overflow-hidden hover-lift">
                 <div class="p-6 pb-4">
