@@ -26,6 +26,7 @@
             <a href="#about" class="hover:text-white transition">About</a>
             <a href="#research" class="hover:text-white transition">Research</a>
             <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
+            <a href="#projects" class="hover:text-white transition">Projects</a>
             <a href="#experience" class="hover:text-white transition">Experience</a>
             <a href="mailto:zs381@georgetown.edu" class="hover:text-white transition">Contact</a>
         </div>
@@ -48,7 +49,7 @@
                     </p>
                 </div>
                 <div class="mt-8 flex gap-6 text-sm text-gray-400 uppercase tracking-widest">
-                    <a href="https://ziyu-shu.github.io/CV_ZiyuShu_260128.pdf" class="hover:text-white transition">CV</a>
+                    <a href="https://ziyu-shu.github.io/CV_ZiyuShu_261022.pdf" class="hover:text-white transition">CV</a>
                     <a href="mailto:zs381@georgetown.edu" class="hover:text-white transition">Email</a>
                     <a href="https://www.linkedin.com/in/ziyu-shu-2964a8213" class="hover:text-white transition">LinkedIn</a>
                 </div>
@@ -144,7 +145,7 @@
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-2">Research Assistant Work: Department of Motor Vehicles in New Jersey</h3>
                     <p class="text-sm text-gray-400 leading-relaxed mb-2">Geocoding spatial data visualization of defining DMV catchment areas at the census tract level. Data visualization in raincloud and lollipop plot to show distribution of Google ratings of DMV driving license service sites in New Jersey.</p>
-                    <a href="https://ziyu-shu.github.io/index.html" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-purple-300 hover:text-white transition">More interactive dashboard →</a>
+                    <a href="https://ziyu-shu.github.io/New_Jersey_DMV_map_filtered.html" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-purple-300 hover:text-white transition">More interactive dashboard →</a>
                 </div>
                 <div class="grid md:grid-cols-2 gap-4 px-6 pb-6">
                     <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10">
@@ -158,10 +159,133 @@
         </div>
     </section>
 
+    <section id="projects" class="py-24 px-8 max-w-6xl mx-auto">
+        <h2 class="serif text-4xl mb-12 text-white">Projects</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Project: NBA shot model -->
+            <div class="glass p-8 rounded-3xl hover-lift">
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="text-xs text-blue-400 font-medium">R</span>
+                    <span class="text-xs text-purple-400 font-medium">LightGBM</span>
+                    <span class="text-xs text-amber-400/90 font-medium">SHAP</span>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">nba-shot-make-model</h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-2">Estimates the probability that an NBA shot goes in, using 425K shots with player-tracking features such as defender closing speed and contest pressure plus shooter and defender profiles. Built in R with LightGBM, leave-one-season-out validation and TreeSHAP. Reaches 0.622 log-loss on a fully held-out season vs. a 0.690 baseline, with well calibrated probabilities.</p>
+                <a href="https://github.com/Ziyu-Shu/nba-shot-make-model" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-purple-300 hover:text-white transition">View on GitHub →</a>
+            </div>
+
+            <!-- Project: hoops-rag -->
+            <div class="glass p-8 rounded-3xl hover-lift">
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="text-xs text-blue-400 font-medium">Python</span>
+                    <span class="text-xs text-purple-400 font-medium">RAG</span>
+                    <span class="text-xs text-amber-400/90 font-medium">Postgres + pgvector</span>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">hoops-rag</h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-2">Grounded question answering over basketball tables and free-text game recaps that returns a typed answer with cited source rows, or abstains when the data cannot answer. Runs fully on a laptop with Postgres + pgvector, nomic-embed-text, a 2B Qwen model, SQL for all arithmetic and a FastAPI chat UI. Scores 36/42 (86%) on a held-out test split with 95% evidence precision.</p>
+                <a href="https://github.com/Ziyu-Shu/hoops-rag" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-purple-300 hover:text-white transition">View on GitHub →</a>
+            </div>
+
+            <!-- Project: THGNN conflict prediction -->
+            <div class="glass p-8 rounded-3xl hover-lift">
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="text-xs text-blue-400 font-medium">Python</span>
+                    <span class="text-xs text-purple-400 font-medium">PyTorch Geometric</span>
+                    <span class="text-xs text-amber-400/90 font-medium">Graph Neural Networks</span>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">thgnn-conflict-prediction</h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-2">Predicts militarized interstate conflict by modeling the world as yearly heterogeneous graphs (1816 to 2012) with alliance, conflict and contiguity edges, plus a fixed-effects panel regression on alliance centrality. Built with PyTorch Geometric (HeteroConv + GAT) on Correlates of War and Polity5 data. Reaches AUC 0.794 ± 0.04 over 5 seeds vs. 0.772 for a logistic regression baseline.</p>
+                <a href="https://github.com/Ziyu-Shu/thgnn-conflict-prediction" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-purple-300 hover:text-white transition">View on GitHub →</a>
+            </div>
+
+            <!-- Project: jailbreak evaluator experiments -->
+            <div class="glass p-8 rounded-3xl hover-lift">
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="text-xs text-blue-400 font-medium">Python</span>
+                    <span class="text-xs text-purple-400 font-medium">LLM-as-Judge</span>
+                    <span class="text-xs text-amber-400/90 font-medium">AI Safety</span>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">jailbreak-eval-experiments</h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-2">Diagnoses and reduces false positives in an LLM-judge jailbreak safety evaluator built within the MLCommons project. Python experiment harness with versioned scorer rubrics, single-variable ablations, a stratified train/test split and FPR/TPR scoring with McNemar tests. Traced the 38% false-positive rate to scorer severity inflation: 95% of false positives carried no ground-truth top-severity label.</p>
+                <a href="https://github.com/Ziyu-Shu/jailbreak-eval-experiments" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-purple-300 hover:text-white transition">View on GitHub →</a>
+            </div>
+
+            <!-- Project: multi ATS job pipeline -->
+            <div class="glass p-8 rounded-3xl hover-lift">
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="text-xs text-blue-400 font-medium">Python</span>
+                    <span class="text-xs text-purple-400 font-medium">SQLite</span>
+                    <span class="text-xs text-amber-400/90 font-medium">Data Pipelines</span>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">multi-ats-job-pipeline</h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-2">Ingests job postings from five Applicant Tracking Systems (Workday, Greenhouse, Lever, Ashby, Paylocity) into an incremental store that tracks new, edited and closed postings. Built in Python with SQLite, pydantic and a rules-first extractor that only falls back to Claude models when needed. Holds 4,223 open postings and extracts descriptions at about 3 ms and $0 per page with 86.7% completeness and 0% boilerplate.</p>
+                <a href="https://github.com/Ziyu-Shu/multi-ats-job-pipeline" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-purple-300 hover:text-white transition">View on GitHub →</a>
+            </div>
+        </div>
+    </section>
+
     <section id="experience" class="py-24 bg-black/50">
         <div class="max-w-5xl mx-auto px-8">
             <h2 class="serif text-4xl mb-12 text-white">Experience</h2>
             <div class="space-y-12">
+                <div class="flex flex-col md:flex-row md:justify-between group">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <p class="text-sm text-gray-500">Sep 2026 – Present</p>
+                        <p class="text-sm text-gray-500">New York, NY</p>
+                        <h4 class="font-semibold text-lg text-white">WisBot AI</h4>
+                        <p class="font-semibold text-sm text-gray-400">AI Engineer</p>
+                    </div>
+                    <div class="md:w-2/3 border-l border-gray-700 pl-8 pb-4 group-hover:border-white transition-colors">
+                        <p class="text-gray-300 leading-relaxed">
+                            Ran end-to-end QA on an LLM agent platform that turns a product brief into a run-ready repository and GitHub workflow, converting reproduced failure cases into prioritized improvement feedback.
+                            Redesigned the search and matching mechanism for the Home Depot to Amazon price-matching integration, lifting match rate from an unstable under 20% to about 85%.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row md:justify-between group">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <p class="text-sm text-gray-500">May 2026 – Present</p>
+                        <p class="text-sm text-gray-500">Remote (Washington, DC)</p>
+                        <h4 class="font-semibold text-lg text-white">MLCommons</h4>
+                        <p class="font-semibold text-sm text-gray-400">AI Engineer</p>
+                    </div>
+                    <div class="md:w-2/3 border-l border-gray-700 pl-8 pb-4 group-hover:border-white transition-colors">
+                        <p class="text-gray-300 leading-relaxed">
+                            Identified past tense plus third-person reference as the signal separating narrative from non-narrative model responses; the resulting two-feature rule reached 100% precision over 859 items and now runs in the team's production evaluation pipeline.
+                            Root-caused excessive false positives to LLM-scorer severity inflation and built a single-command ablation harness that A/B-tested each rubric change, cutting candidate FPR to 9.7%.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row md:justify-between group">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <p class="text-sm text-gray-500">Jun 2026 – Present</p>
+                        <p class="text-sm text-gray-500">Washington, DC</p>
+                        <h4 class="font-semibold text-lg text-white">Massive Data Institute</h4>
+                        <p class="font-semibold text-sm text-gray-400">MDI Scholar</p>
+                    </div>
+                    <div class="md:w-2/3 border-l border-gray-700 pl-8 pb-4 group-hover:border-white transition-colors">
+                        <p class="text-gray-300 leading-relaxed">
+                            Built a formula-driven Excel rule-tuning tool to operationalize RuleFit-style SNAP payment-error inclusion rules across 5 household-size segments, enabling threshold adjustment without macros under restricted IT environments.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row md:justify-between group">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <p class="text-sm text-gray-500">Sep 2025 – Present</p>
+                        <p class="text-sm text-gray-500">Washington, DC</p>
+                        <h4 class="font-semibold text-lg text-white">Better Government Lab</h4>
+                        <p class="font-semibold text-sm text-gray-400">Data Science Research Assistant</p>
+                    </div>
+                    <div class="md:w-2/3 border-l border-gray-700 pl-8 pb-4 group-hover:border-white transition-colors">
+                        <p class="text-gray-300 leading-relaxed">
+                            Reverse-engineered an undocumented public data source and built an automated collection pipeline with rate limiting and schema validation, producing 50,000+ standardized records for agency performance evaluation.
+                        </p>
+                    </div>
+                </div>
+
                 <div class="flex flex-col md:flex-row md:justify-between group">
                     <div class="md:w-1/3 mb-4 md:mb-0">
                         <p class="text-sm text-gray-500">Feb 2025 – Aug 2025</p>
