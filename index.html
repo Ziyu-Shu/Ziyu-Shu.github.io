@@ -3,154 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ziyu Shu | Data Science & Public Policy</title>
+    <title>Ziyu Shu | Data Science</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
 
     <style>
-        body { font-family: 'Inter', sans-serif; background: #000000; color: #e5e5e5; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: #f6f4ef; color: #1c1917; }
         .serif { font-family: 'DM Serif Display', serif; }
-        .glass { background: rgba(20, 20, 20, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .gradient-bg { background: #000000; }
+        /* White card used for every block on the page */
+        .card { background: #ffffff; border: 1px solid #e7e5e4; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04); }
         .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1); }
-        .portfolio-card { transition: all 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(28, 25, 23, 0.08); }
+        /* Small colored pill for tech tags */
+        .tag { font-size: 0.75rem; font-weight: 500; padding: 0.2rem 0.65rem; border-radius: 9999px; }
+        /* Square tile that holds a company logo or monogram */
+        .logo-tile { width: 3.5rem; height: 3.5rem; border-radius: 1rem; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #ffffff; }
     </style>
 </head>
-<body class="gradient-bg">
+<body>
 
-    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-black/80 backdrop-blur-sm border-b border-white/10">
-        <span class="text-white tracking-widest"><span class="serif text-2xl uppercase">ZIYU SHU</span> <span style="font-family: 'Noto Serif SC', serif; font-size: 1.3rem; font-weight: 500;">|  舒秭妤</span></span>
-        <div class="space-x-8 text-sm uppercase tracking-widest font-light text-gray-300">
-            <a href="#about" class="hover:text-white transition">About</a>
-            <a href="#research" class="hover:text-white transition">Research</a>
-            <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
-            <a href="#experience" class="hover:text-white transition">Experience</a>
-            <a href="mailto:zs381@georgetown.edu" class="hover:text-white transition">Contact</a>
+    <nav class="fixed w-full z-50 px-6 md:px-10 py-5 flex justify-between items-center bg-[#f6f4ef]/85 backdrop-blur-md border-b border-stone-200">
+        <a href="#about" class="text-stone-900 tracking-widest"><span class="serif text-2xl uppercase">ZIYU SHU</span> <span style="font-family: 'Noto Serif SC', serif; font-size: 1.3rem; font-weight: 500;">|  舒秭妤</span></a>
+        <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest font-medium text-stone-500">
+            <a href="#about" class="hover:text-stone-900 transition">About</a>
+            <a href="#experience" class="hover:text-stone-900 transition">Experience</a>
+            <a href="#portfolio" class="hover:text-stone-900 transition">Portfolio</a>
+            <a href="#projects" class="hover:text-stone-900 transition">Projects</a>
+            <a href="mailto:zs381@georgetown.edu" class="hover:text-stone-900 transition">Contact</a>
         </div>
     </nav>
 
-    <section id="about" class="min-h-screen flex flex-col justify-center items-center px-4 pt-20">
-        <div class="max-w-4xl flex flex-col md:flex-row items-start gap-12">
+    <section id="about" class="min-h-screen flex flex-col justify-center items-center px-6 pt-28 pb-16">
+        <div class="max-w-5xl flex flex-col md:flex-row items-center md:items-start gap-12">
             <div class="flex-shrink-0">
-                <img src="avatar.jpg" alt="Ziyu Shu" class="max-w-xs h-auto rounded-2xl shadow-lg">
+                <img src="avatar.jpg" alt="Ziyu Shu" class="w-64 md:w-72 h-auto rounded-3xl shadow-xl ring-1 ring-stone-200">
             </div>
-    
+
             <div class="text-left">
-                <h1 class="serif text-6xl md:text-7xl mb-6 text-white">Ziyu Shu</h1>
-                <div class="prose prose-slate font-light text-gray-300 leading-relaxed text-xl">
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-[#1e3a5f] mb-4">AI Engineer · Data Engineer · Data Scientist · Data Analyst</p>
+                <h1 class="serif text-6xl md:text-7xl mb-6 text-stone-900">Ziyu Shu</h1>
+                <div class="text-stone-600 leading-relaxed text-lg md:text-xl">
                     <p class="mb-4">
-                        I am a M.S. candidate in <strong class="text-purple-300 font-semibold">Data Science for Public Policy</strong> at Georgetown University, McCourt School of Public Policy, USA. 
-                        My research and policy interests lie at the intersection of <strong class="text-purple-300 font-semibold">Computational Social Science</strong>, <strong class="text-purple-300 font-semibold">Foreign Policy</strong>, <strong class="text-purple-300 font-semibold">Public Administration</strong>, and <strong class="text-purple-300 font-semibold">AI Governance</strong>, 
-                        with a particular focus on <strong class="text-purple-300 font-semibold">Conflict Processes</strong> and <strong class="text-purple-300 font-semibold">U.S.-China Relations</strong>. 
+                        I am an M.S. candidate in Data Science at Georgetown University.
+                        I moved from social science into code, and I bring both ways of thinking to my work: asking what matters and why, then building, testing and shipping the answer.
+                        I work as an AI Engineer, Data Engineer, Data Scientist and Data Analyst, driven by product design and evaluation &amp; QA.
                         Before my graduate studies, I received my B.A. in International Politics from Peking University, Yuanpei College, China.
                     </p>
                 </div>
-                <div class="mt-8 flex gap-6 text-sm text-gray-400 uppercase tracking-widest">
-                    <a href="https://ziyu-shu.github.io/CV_ZiyuShu_260128.pdf" class="hover:text-white transition">CV</a>
-                    <a href="mailto:zs381@georgetown.edu" class="hover:text-white transition">Email</a>
-                    <a href="https://www.linkedin.com/in/ziyu-shu-2964a8213" class="hover:text-white transition">LinkedIn</a>
+                <div class="mt-8 flex flex-wrap gap-3 text-sm font-medium">
+                    <a href="https://ziyu-shu.github.io/CV_ZiyuShu_261022.pdf" class="px-5 py-2.5 rounded-full bg-stone-900 text-white hover:bg-[#1e3a5f] transition">CV</a>
+                    <a href="mailto:zs381@georgetown.edu" class="px-5 py-2.5 rounded-full border border-stone-300 text-stone-700 bg-white hover:border-stone-900 hover:text-stone-900 transition">Email</a>
+                    <a href="https://www.linkedin.com/in/ziyu-shu-2964a8213" class="px-5 py-2.5 rounded-full border border-stone-300 text-stone-700 bg-white hover:border-stone-900 hover:text-stone-900 transition">LinkedIn</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="research" class="py-24 px-8 max-w-5xl mx-auto">
-        <h2 class="serif text-4xl mb-12 text-white">Academic Research</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="glass p-8 rounded-3xl hover-lift">
-                <span class="text-blue-400 text-xs font-semibold uppercase tracking-widest">MPSA 2026 Presentation</span>
-                <h3 class="text-xl font-semibold mt-4 mb-3 text-white">Alliances and War: Using Temporal Heterogeneous Graph Neural Networks to Predict Interstate Conflict</h3>
-                <div class="flex flex-wrap gap-2 mb-3">
-                    <span class="text-xs text-blue-400 font-medium">Python</span>
-                    <span class="text-xs text-purple-400 font-medium">Machine Learning</span>
-                    <span class="text-xs text-amber-400/90 font-medium">Network Analysis</span>
-                </div>
-                <div class="h-[1px] w-12 bg-gray-600"></div>
-                <div class="mt-5 rounded-xl overflow-hidden border border-white/10 bg-white/5">
-                    <img src="conflict_vis.png" alt="Conflict visualization" class="w-full h-auto object-contain">
+    <section id="experience" class="py-24 px-6 md:px-8 max-w-5xl mx-auto">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-[#1e3a5f] mb-3">Work</p>
+        <h2 class="serif text-4xl md:text-5xl mb-12 text-stone-900">Experience</h2>
+        <div class="flex flex-col gap-6">
+            <!-- WisBot AI -->
+            <div class="card rounded-3xl p-6 md:p-8 hover-lift">
+                <div class="flex items-start gap-5">
+                    <img src="logos/wisbot.jpg" alt="WisBot AI logo" class="logo-tile object-cover border border-stone-200 bg-white">
+                    <div class="flex-1">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1">
+                            <h4 class="font-semibold text-lg text-stone-900">WisBot AI</h4>
+                            <p class="text-sm text-stone-500">Sep 2026 – Present · New York, NY</p>
+                        </div>
+                        <p class="text-sm text-[#1e3a5f] font-semibold mb-4">AI Engineer</p>
+                        <ul class="list-disc pl-5 space-y-2 text-stone-600 leading-relaxed marker:text-stone-400">
+                            <li>Ran end-to-end QA on an LLM agent platform that turns a product brief into a run-ready repository and GitHub workflow, converting reproduced failure cases into prioritized improvement feedback.</li>
+                            <li>Redesigned the search and matching mechanism for the Home Depot to Amazon price-matching integration, lifting match rate from an unstable under 20% to about 85%.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="glass p-8 rounded-3xl hover-lift">
-                <span class="text-purple-400 text-xs font-semibold uppercase tracking-widest">APSA & PIPC 2026 Presentation</span>
-                <h3 class="text-xl font-semibold mt-4 mb-3 text-white">When Honey Tastes Bitter: When China's Development Projects Overseas Backfire on Its Political Influence</h3>
-                <div class="flex flex-wrap gap-2 mb-3">
-                    <span class="text-xs text-blue-400 font-medium">R</span>
-                    <span class="text-xs text-purple-400 font-medium">Causal Inference</span>
+
+            <!-- MLCommons -->
+            <div class="card rounded-3xl p-6 md:p-8 hover-lift">
+                <div class="flex items-start gap-5">
+                    <img src="logos/mlcommons.jpg" alt="MLCommons logo" class="logo-tile object-cover border border-stone-200 bg-white">
+                    <div class="flex-1">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1">
+                            <h4 class="font-semibold text-lg text-stone-900">MLCommons</h4>
+                            <p class="text-sm text-stone-500">May 2026 – Present · Remote (Washington, DC)</p>
+                        </div>
+                        <p class="text-sm text-[#1e3a5f] font-semibold mb-4">AI Engineer</p>
+                        <ul class="list-disc pl-5 space-y-2 text-stone-600 leading-relaxed marker:text-stone-400">
+                            <li>Identified past tense plus third-person reference as the signal separating narrative from non-narrative model responses; the resulting two-feature rule reached 100% precision over 859 items and now runs in the team's production evaluation pipeline.</li>
+                            <li>Root-caused excessive false positives to LLM-scorer severity inflation and built a single-command ablation harness that A/B-tested each rubric change, cutting candidate FPR to 9.7%.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="h-[1px] w-12 bg-gray-600"></div>
+            </div>
+
+            <!-- Massive Data Institute -->
+            <div class="card rounded-3xl p-6 md:p-8 hover-lift">
+                <div class="flex items-start gap-5">
+                    <img src="logos/mdi.jpg" alt="Massive Data Institute logo" class="logo-tile object-cover border border-stone-200 bg-white">
+                    <div class="flex-1">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1">
+                            <h4 class="font-semibold text-lg text-stone-900">Massive Data Institute</h4>
+                            <p class="text-sm text-stone-500">Jun 2026 – Present · Washington, DC</p>
+                        </div>
+                        <p class="text-sm text-[#1e3a5f] font-semibold mb-4">MDI Scholar</p>
+                        <ul class="list-disc pl-5 space-y-2 text-stone-600 leading-relaxed marker:text-stone-400">
+                            <li>Built a formula-driven Excel rule-tuning tool to operationalize RuleFit-style SNAP payment-error inclusion rules across 5 household-size segments, enabling threshold adjustment without macros under restricted IT environments.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Better Government Lab -->
+            <div class="card rounded-3xl p-6 md:p-8 hover-lift">
+                <div class="flex items-start gap-5">
+                    <img src="logos/bgl.jpg" alt="Better Government Lab logo" class="logo-tile object-cover border border-stone-200 bg-white">
+                    <div class="flex-1">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1">
+                            <h4 class="font-semibold text-lg text-stone-900">Better Government Lab</h4>
+                            <p class="text-sm text-stone-500">Sep 2025 – Present · Washington, DC</p>
+                        </div>
+                        <p class="text-sm text-[#1e3a5f] font-semibold mb-4">Data Science Research Assistant</p>
+                        <ul class="list-disc pl-5 space-y-2 text-stone-600 leading-relaxed marker:text-stone-400">
+                            <li>Reverse-engineered an undocumented public data source and built an automated collection pipeline with rate limiting and schema validation, producing 50,000+ standardized records for agency performance evaluation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- U.S.-China Business Council -->
+            <div class="card rounded-3xl p-6 md:p-8 hover-lift">
+                <div class="flex items-start gap-5">
+                    <img src="logos/uscbc.jpg" alt="U.S.-China Business Council logo" class="logo-tile object-cover border border-stone-200 bg-white">
+                    <div class="flex-1">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1">
+                            <h4 class="font-semibold text-lg text-stone-900">U.S.-China Business Council</h4>
+                            <p class="text-sm text-stone-500">Feb 2025 – Aug 2025 · Beijing, China</p>
+                        </div>
+                        <p class="text-sm text-[#1e3a5f] font-semibold mb-4">Government Affairs &amp; Business Advisory Analyst</p>
+                        <ul class="list-disc pl-5 space-y-2 text-stone-600 leading-relaxed marker:text-stone-400">
+                            <li>Led the production of daily media sweep monitoring and analysis reports tracking U.S.–China relations.</li>
+                            <li>Conducted in-depth policy research on the Greater Bay Area and China’s AI initiatives, assessing implications for government strategy and regulatory frameworks.</li>
+                            <li>Coordinated high-level events and stakeholder meetings.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deloitte -->
+            <div class="card rounded-3xl p-6 md:p-8 hover-lift">
+                <div class="flex items-start gap-5">
+                    <img src="logos/deloitte.jpg" alt="Deloitte logo" class="logo-tile object-cover border border-stone-200 bg-white">
+                    <div class="flex-1">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1">
+                            <h4 class="font-semibold text-lg text-stone-900">Deloitte</h4>
+                            <p class="text-sm text-stone-500">May 2024 – Aug 2024 · Beijing, China</p>
+                        </div>
+                        <p class="text-sm text-[#1e3a5f] font-semibold mb-4">Digital Consultant &amp; Business Analyst</p>
+                        <ul class="list-disc pl-5 space-y-2 text-stone-600 leading-relaxed marker:text-stone-400">
+                            <li>Independently authored 200+ pages of technical and policy-facing documentation (UI requirements &amp; system data-transfer protocols) translating evolving client and stakeholder needs into implementable specifications for AI-enabled business platforms.</li>
+                            <li>Partnered with front-end and back-end engineering teams to design, test, and deploy the products.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="py-24 px-8 max-w-6xl mx-auto">
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-            <h2 class="serif text-4xl text-white">Data Portfolio</h2>
-        </div>
+    <section id="portfolio" class="py-24 px-6 md:px-8 max-w-6xl mx-auto">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-[#1e3a5f] mb-3">Selected Work</p>
+        <h2 class="serif text-4xl md:text-5xl mb-12 text-stone-900">Data Portfolio</h2>
         <div class="flex flex-col gap-10">
             <!-- Project Card: NBA shot model -->
-            <div class="portfolio-card glass rounded-3xl overflow-hidden hover-lift">
-                <div class="p-6 pb-4">
-                    <div class="flex flex-wrap gap-2 mb-3">
-                        <span class="text-xs text-blue-400 font-medium">R</span>
-                        <span class="text-xs text-purple-400 font-medium">Machine Learning</span>
-                        <span class="text-xs text-amber-400/90 font-medium">Sports Analytics</span>
+            <div class="card rounded-3xl overflow-hidden hover-lift">
+                <div class="p-6 md:p-8 pb-4">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tag border border-stone-300 text-stone-600">R</span>
+                        <span class="tag border border-stone-300 text-stone-600">Machine Learning</span>
+                        <span class="tag border border-stone-300 text-stone-600">Sports Analytics</span>
                     </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">NBA Shot Make Probability Model from Player-Tracking Data</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-2">Built a calibrated make-probability model in R on 425K NBA shots, using LightGBM with tracking-derived defender-approach and contest features plus shooter and defender profiles. It reaches 0.622 log-loss on a fully held-out season (vs. 0.690 baseline), with SHAP-based explanations and a shooter ranking by FG% over expected.</p>
-                    <a href="https://github.com/Ziyu-Shu/nba-shot-make-model" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-purple-300 hover:text-white transition">View on GitHub →</a>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-2">NBA Shot Make Probability Model from Player-Tracking Data</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed mb-3">Built a calibrated make-probability model in R on 425K NBA shots, using LightGBM with tracking-derived defender-approach and contest features plus shooter and defender profiles. It reaches 0.622 log-loss on a fully held-out season (vs. 0.690 baseline), with SHAP-based explanations and a shooter ranking by FG% over expected.</p>
+                    <a href="https://github.com/Ziyu-Shu/nba-shot-make-model" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-medium text-[#1e3a5f] hover:text-stone-900 underline decoration-[#1e3a5f]/30 underline-offset-4 transition">View on GitHub →</a>
                 </div>
-                <div class="grid md:grid-cols-2 gap-4 px-6 pb-6">
-                    <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                <div class="grid md:grid-cols-2 gap-4 px-6 md:px-8 pb-8">
+                    <div class="bg-stone-50 rounded-2xl overflow-hidden border border-stone-200">
                         <img src="nba_shap.png" alt="SHAP dependence plots for shot distance, contester distance, shot clock and shooter speed" class="w-full h-auto object-contain">
                     </div>
-                    <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                    <div class="bg-stone-50 rounded-2xl overflow-hidden border border-stone-200">
                         <img src="nba_calibration.png" alt="Calibration of held-out season predictions" class="w-full h-auto object-contain">
                     </div>
                 </div>
             </div>
 
             <!-- Project Card 1 -->
-            <div class="portfolio-card glass rounded-3xl overflow-hidden hover-lift">
-                <div class="p-6 pb-4">
-                    <div class="flex flex-wrap gap-2 mb-3">
-                        <span class="text-xs text-blue-400 font-medium">Python</span>
-                        <span class="text-xs text-purple-400 font-medium">NLP</span>
-                        <span class="text-xs text-amber-400/90 font-medium">Time Series Analysis</span>
+            <div class="card rounded-3xl overflow-hidden hover-lift">
+                <div class="p-6 md:p-8 pb-4">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tag border border-stone-300 text-stone-600">Python</span>
+                        <span class="tag border border-stone-300 text-stone-600">NLP</span>
+                        <span class="tag border border-stone-300 text-stone-600">Time Series Analysis</span>
                     </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">From Words to Actions: U.S.-China Political Incident Forecasting Through U.S. Official Statement Analysis</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-2">Using bilateral events data from GDELT and official White House statements from 2009 to 2025, we applied lexicon-based sentiment analysis to statements and examined their relationship with U.S–China events using time-series methods.</p>
-                    <a href="https://github.com/Ziyu-Shu/Data_Science_1_Final_Project" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-purple-300 hover:text-white transition">View on GitHub →</a>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-2">From Words to Actions: U.S.-China Political Incident Forecasting Through U.S. Official Statement Analysis</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed mb-3">Using bilateral events data from GDELT and official White House statements from 2009 to 2025, we applied lexicon-based sentiment analysis to statements and examined their relationship with U.S–China events using time-series methods.</p>
+                    <a href="https://github.com/Ziyu-Shu/Data_Science_1_Final_Project" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-medium text-[#1e3a5f] hover:text-stone-900 underline decoration-[#1e3a5f]/30 underline-offset-4 transition">View on GitHub →</a>
                 </div>
-                <div class="grid md:grid-cols-2 gap-4 px-6 pb-6">
-                    <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                <div class="grid md:grid-cols-2 gap-4 px-6 md:px-8 pb-8">
+                    <div class="bg-stone-50 rounded-2xl overflow-hidden border border-stone-200">
                         <img src="ds1.png" alt="U.S.-China Political Incident Forecasting figure 1" class="w-full h-auto object-contain">
                     </div>
-                    <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                    <div class="bg-stone-50 rounded-2xl overflow-hidden border border-stone-200">
                         <img src="ds1_2.png" alt="U.S.-China Political Incident Forecasting figure 2" class="w-full h-auto object-contain">
                     </div>
                 </div>
             </div>
 
             <!-- Project Card 2 -->
-            <div class="portfolio-card glass rounded-3xl overflow-hidden hover-lift">
-                <div class="p-6 pb-4">
-                    <div class="flex flex-wrap gap-2 mb-3">
-                        <span class="text-xs text-blue-400 font-medium">Python</span>
-                        <span class="text-xs text-blue-400 font-medium">R</span>
-                        <span class="text-xs text-purple-400 font-medium">Web Scraping</span>
-                        <span class="text-xs text-amber-400/90 font-medium">Geospatial Analysis</span>
+            <div class="card rounded-3xl overflow-hidden hover-lift">
+                <div class="p-6 md:p-8 pb-4">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tag border border-stone-300 text-stone-600">Python</span>
+                        <span class="tag border border-stone-300 text-stone-600">R</span>
+                        <span class="tag border border-stone-300 text-stone-600">Web Scraping</span>
+                        <span class="tag border border-stone-300 text-stone-600">Geospatial Analysis</span>
                     </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Research Assistant Work: Department of Motor Vehicles in New Jersey</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-2">Geocoding spatial data visualization of defining DMV catchment areas at the census tract level. Data visualization in raincloud and lollipop plot to show distribution of Google ratings of DMV driving license service sites in New Jersey.</p>
-                    <a href="https://ziyu-shu.github.io/index.html" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-purple-300 hover:text-white transition">More interactive dashboard →</a>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-2">Research Assistant Work: Department of Motor Vehicles in New Jersey</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed mb-3">Geocoding spatial data visualization of defining DMV catchment areas at the census tract level. Data visualization in raincloud and lollipop plot to show distribution of Google ratings of DMV driving license service sites in New Jersey.</p>
+                    <a href="https://ziyu-shu.github.io/New_Jersey_DMV_map_filtered.html" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-medium text-[#1e3a5f] hover:text-stone-900 underline decoration-[#1e3a5f]/30 underline-offset-4 transition">More interactive dashboard →</a>
                 </div>
-                <div class="grid md:grid-cols-2 gap-4 px-6 pb-6">
-                    <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                <div class="grid md:grid-cols-2 gap-4 px-6 md:px-8 pb-8">
+                    <div class="bg-stone-50 rounded-2xl overflow-hidden border border-stone-200">
                         <img src="dmv_1.png" alt="DMV New Jersey figure 1" class="w-full h-auto object-contain">
                     </div>
-                    <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                    <div class="bg-stone-50 rounded-2xl overflow-hidden border border-stone-200">
                         <img src="dmv_2.png" alt="DMV New Jersey figure 2" class="w-full h-auto object-contain">
                     </div>
                 </div>
@@ -158,51 +247,79 @@
         </div>
     </section>
 
-    <section id="experience" class="py-24 bg-black/50">
-        <div class="max-w-5xl mx-auto px-8">
-            <h2 class="serif text-4xl mb-12 text-white">Experience</h2>
-            <div class="space-y-12">
-                <div class="flex flex-col md:flex-row md:justify-between group">
-                    <div class="md:w-1/3 mb-4 md:mb-0">
-                        <p class="text-sm text-gray-500">Feb 2025 – Aug 2025</p>
-                        <p class="text-sm text-gray-500">Beijing, China</p>
-                        <h4 class="font-semibold text-lg text-white">U.S.-China Business Council</h4>
-                        <p class="font-semibold text-sm text-gray-400">Government Affairs & Business Advisory Analyst</p>
-                    </div>
-                    <div class="md:w-2/3 border-l border-gray-700 pl-8 pb-4 group-hover:border-white transition-colors">
-                        <p class="text-gray-300 leading-relaxed">
-                            Led the production of daily media sweep monitoring and analysis reports tracking U.S.–China relations. 
-                            Conducted in-depth policy research on the Greater Bay Area and China’s AI initiatives, assessing implications for government strategy and regulatory frameworks.
-                            Coordinated high-level events and stakeholder meetings.
-                        </p>
-                    </div>
+    <section id="projects" class="py-24 px-6 md:px-8 max-w-6xl mx-auto">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-[#1e3a5f] mb-3">Code</p>
+        <h2 class="serif text-4xl md:text-5xl mb-12 text-stone-900">Projects</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Project: NBA shot model -->
+            <div class="card p-6 md:p-8 rounded-3xl hover-lift flex flex-col">
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="tag border border-stone-300 text-stone-600">R</span>
+                    <span class="tag border border-stone-300 text-stone-600">LightGBM</span>
+                    <span class="tag border border-stone-300 text-stone-600">SHAP</span>
                 </div>
+                <h3 class="text-xl font-semibold text-stone-900 mb-2 font-mono">nba-shot-make-model</h3>
+                <p class="text-sm text-stone-600 leading-relaxed mb-4 flex-1">Estimates the probability that an NBA shot goes in, using 425K shots with player-tracking features such as defender closing speed and contest pressure plus shooter and defender profiles. Built in R with LightGBM, leave-one-season-out validation and TreeSHAP. Reaches 0.622 log-loss on a fully held-out season vs. a 0.690 baseline, with well calibrated probabilities.</p>
+                <a href="https://github.com/Ziyu-Shu/nba-shot-make-model" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-medium text-[#1e3a5f] hover:text-stone-900 underline decoration-[#1e3a5f]/30 underline-offset-4 transition">View on GitHub →</a>
+            </div>
 
-                <div class="flex flex-col md:flex-row md:justify-between group">
-                    <div class="md:w-1/3 mb-4 md:mb-0">
-                        <p class="text-sm text-gray-500">May 2024 – Aug 2024</p>
-                        <p class="text-sm text-gray-500">Beijing, China</p>
-                        <h4 class="font-semibold text-lg text-white">Deloitte</h4>
-                        <p class="font-semibold text-sm text-gray-400">Digital Consultant & Business Analyst</p>
-                    </div>
-                    <div class="md:w-2/3 border-l border-gray-700 pl-8 pb-4 group-hover:border-white transition-colors">
-                        <p class="text-gray-300 leading-relaxed">
-                            Independently authored 200+ pages of technical and policy-facing documentation (UI requirements & system data-transfer protocols) translating evolving client and stakeholder needs into implementable specifications for AI-enabled business platforms.
-                            Partnered with front-end and back-end engineering teams to design, test, and deploy the products.
-                        </p>
-                    </div>
+            <!-- Project: hoops-rag -->
+            <div class="card p-6 md:p-8 rounded-3xl hover-lift flex flex-col">
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="tag border border-stone-300 text-stone-600">Python</span>
+                    <span class="tag border border-stone-300 text-stone-600">RAG</span>
+                    <span class="tag border border-stone-300 text-stone-600">Postgres + pgvector</span>
                 </div>
+                <h3 class="text-xl font-semibold text-stone-900 mb-2 font-mono">hoops-rag</h3>
+                <p class="text-sm text-stone-600 leading-relaxed mb-4 flex-1">Grounded question answering over basketball tables and free-text game recaps that returns a typed answer with cited source rows, or abstains when the data cannot answer. Runs fully on a laptop with Postgres + pgvector, nomic-embed-text, a 2B Qwen model, SQL for all arithmetic and a FastAPI chat UI. Scores 36/42 (86%) on a held-out test split with 95% evidence precision.</p>
+                <a href="https://github.com/Ziyu-Shu/hoops-rag" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-medium text-[#1e3a5f] hover:text-stone-900 underline decoration-[#1e3a5f]/30 underline-offset-4 transition">View on GitHub →</a>
+            </div>
+
+            <!-- Project: THGNN conflict prediction -->
+            <div class="card p-6 md:p-8 rounded-3xl hover-lift flex flex-col">
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="tag border border-stone-300 text-stone-600">Python</span>
+                    <span class="tag border border-stone-300 text-stone-600">PyTorch Geometric</span>
+                    <span class="tag border border-stone-300 text-stone-600">Graph Neural Networks</span>
+                </div>
+                <h3 class="text-xl font-semibold text-stone-900 mb-2 font-mono">thgnn-conflict-prediction</h3>
+                <p class="text-sm text-stone-600 leading-relaxed mb-4 flex-1">Predicts militarized interstate conflict by modeling the world as yearly heterogeneous graphs (1816 to 2012) with alliance, conflict and contiguity edges, plus a fixed-effects panel regression on alliance centrality. Built with PyTorch Geometric (HeteroConv + GAT) on Correlates of War and Polity5 data. Reaches AUC 0.794 ± 0.04 over 5 seeds vs. 0.772 for a logistic regression baseline.</p>
+                <a href="https://github.com/Ziyu-Shu/thgnn-conflict-prediction" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-medium text-[#1e3a5f] hover:text-stone-900 underline decoration-[#1e3a5f]/30 underline-offset-4 transition">View on GitHub →</a>
+            </div>
+
+            <!-- Project: jailbreak evaluator experiments -->
+            <div class="card p-6 md:p-8 rounded-3xl hover-lift flex flex-col">
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="tag border border-stone-300 text-stone-600">Python</span>
+                    <span class="tag border border-stone-300 text-stone-600">LLM-as-Judge</span>
+                    <span class="tag border border-stone-300 text-stone-600">AI Safety</span>
+                </div>
+                <h3 class="text-xl font-semibold text-stone-900 mb-2 font-mono">jailbreak-eval-experiments</h3>
+                <p class="text-sm text-stone-600 leading-relaxed mb-4 flex-1">Diagnoses and reduces false positives in an LLM-judge jailbreak safety evaluator built within the MLCommons project. Python experiment harness with versioned scorer rubrics, single-variable ablations, a stratified train/test split and FPR/TPR scoring with McNemar tests. Traced the 38% false-positive rate to scorer severity inflation: 95% of false positives carried no ground-truth top-severity label.</p>
+                <a href="https://github.com/Ziyu-Shu/jailbreak-eval-experiments" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-medium text-[#1e3a5f] hover:text-stone-900 underline decoration-[#1e3a5f]/30 underline-offset-4 transition">View on GitHub →</a>
+            </div>
+
+            <!-- Project: multi ATS job pipeline -->
+            <div class="card p-6 md:p-8 rounded-3xl hover-lift flex flex-col">
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="tag border border-stone-300 text-stone-600">Python</span>
+                    <span class="tag border border-stone-300 text-stone-600">SQLite</span>
+                    <span class="tag border border-stone-300 text-stone-600">Data Pipelines</span>
+                </div>
+                <h3 class="text-xl font-semibold text-stone-900 mb-2 font-mono">multi-ats-job-pipeline</h3>
+                <p class="text-sm text-stone-600 leading-relaxed mb-4 flex-1">Ingests job postings from five Applicant Tracking Systems (Workday, Greenhouse, Lever, Ashby, Paylocity) into an incremental store that tracks new, edited and closed postings. Built in Python with SQLite, pydantic and a rules-first extractor that only falls back to Claude models when needed. Holds 4,223 open postings and extracts descriptions at about 3 ms and $0 per page with 86.7% completeness and 0% boilerplate.</p>
+                <a href="https://github.com/Ziyu-Shu/multi-ats-job-pipeline" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-medium text-[#1e3a5f] hover:text-stone-900 underline decoration-[#1e3a5f]/30 underline-offset-4 transition">View on GitHub →</a>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 text-center">
-        <div class="serif text-3xl mb-8 text-white">Let's Connect.</div>
-        <div class="flex justify-center space-x-6 text-sm uppercase tracking-widest text-gray-400">
-            <a href="mailto:zs381@georgetown.edu" class="hover:text-white transition">Email</a>
-            <a href="https://www.linkedin.com/in/ziyu-shu-2964a8213/" class="hover:text-white transition">LinkedIn</a>
+    <footer class="py-20 text-center border-t border-stone-200 bg-white">
+        <div class="serif text-4xl mb-8 text-stone-900">Let's Connect.</div>
+        <div class="flex justify-center gap-3 text-sm font-medium">
+            <a href="mailto:zs381@georgetown.edu" class="px-5 py-2.5 rounded-full bg-stone-900 text-white hover:bg-[#1e3a5f] transition">Email</a>
+            <a href="https://www.linkedin.com/in/ziyu-shu-2964a8213/" class="px-5 py-2.5 rounded-full border border-stone-300 text-stone-700 hover:border-stone-900 hover:text-stone-900 transition">LinkedIn</a>
         </div>
-        <p class="mt-12 text-[10px] text-gray-600 uppercase tracking-[0.2em]">© 2026 Ziyu Shu. Built with intention.</p>
+        <p class="mt-12 text-[10px] text-stone-400 uppercase tracking-[0.2em]">© 2026 Ziyu Shu. Built with intention.</p>
     </footer>
 
 </body>
